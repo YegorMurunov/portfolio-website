@@ -1,0 +1,22 @@
+$desktop: 1280px;
+$tablet: 1024px;
+$mobile: 768px;
+
+// MEDIA
+
+@mixin _desktop {
+	@media (max-width: $desktop) {
+		@content;
+	}
+}
+@mixin _tablet {
+	@media (max-width: $tablet) {
+		@content;
+	}
+}
+@mixin _mobile {
+	@media (max-width: $mobile) {
+		@content;
+	}
+}
+// Using: @include _desktop {...}

@@ -1,0 +1,116 @@
+.spoilers {
+	display: block;
+	width: 100%;
+	position: relative;
+	margin-top: 15px;
+
+	// .spoilers__item
+
+	&__item {
+		// padding: 16px 24px;
+		border: 1px solid rgb(233, 234, 236);
+		border-radius: 12px;
+		transition: all 0.3s ease-in-out;
+		// cursor: pointer;
+
+		&:hover {
+			border-color: var(--color-text-grey);
+		}
+	}
+}
+.spoilers-item {
+	// .spoilers-item__title
+
+	&__title {
+		@include adaptiveValue('font-size', 20, 18);
+		position: relative;
+		cursor: pointer;
+		padding: 16px 30px 16px 24px;
+		// padding-right: 30px;
+		transition: 0.3s ease-in-out;
+		user-select: none;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			width: 12px;
+			height: 2px;
+			// background-color: var(--color-text-grey);
+			background-color: rgb(213, 214, 200);
+			opacity: 0.5;
+			opacity: 1;
+			border-radius: 5px;
+			transform: rotate(90deg);
+			transition: transform 0.3s ease-in-out;
+		}
+		&::after {
+			transform: rotate(0);
+		}
+	}
+
+	// .spoilers-item__content
+
+	&__content {
+		color: var(--color-text-grey);
+		@include adaptiveValue('font-size', 18, 16);
+		// margin-top: 20px;
+		display: none;
+		padding: 0 24px 16px 24px;
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	// .spoilers-item__ul
+
+	&__ul {
+		margin-top: 10px;
+		list-style: none;
+		padding-left: 15px;
+
+		li {
+			color: var(--color-text-grey);
+			padding-left: 8px;
+
+			&::marker {
+				content: '➤';
+				font-size: 12px;
+				color: var(--color-text-grey);
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 15px;
+	}
+
+	&[data-active=''] {
+		// background-color: var(--color-light-grey);
+		background-color: rgb(247, 247, 248);
+		border-color: rgb(213, 214, 216);
+		cursor: default;
+
+		.spoilers-item__title {
+			&::before {
+				transform: rotate(45deg);
+			}
+			&::after {
+				transform: rotate(-45deg);
+			}
+		}
+
+		.spoilers-item__content {
+			display: block;
+		}
+	}
+}

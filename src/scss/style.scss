@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+@import 'modules/nullstyle';
+@import 'fonts';
+@import 'modules/variables';
+@import 'mixins/mixins';
+@import 'modules/components';
+
+// content =========================================
+@import 'modules/main';
+@import 'modules/section-hero';
+@import 'modules/section-about';
+@import 'modules/section-portfolio';
+// header =========================================
+@import 'modules/header';
+
+// footer =========================================
+@import 'modules/footer';
+
+// popups
+@import 'modules/popups';

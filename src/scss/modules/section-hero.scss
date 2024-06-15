@@ -1,0 +1,109 @@
+.section-hero {
+	min-height: 100vh;
+	min-height: calc(var(--vh) * 100);
+	padding: 200px 0 40px 0;
+	@include adaptiveValue('padding-top', 200, 150);
+	background-image: url('@img/hero/hero-left_2.svg'),
+		url('@img/hero/hero-right_2.svg');
+	background-position: 0% 30%, 100% 30%;
+	background-size: auto, auto;
+	background-repeat: no-repeat, no-repeat;
+	animation: heroBg 5s ease-in-out infinite;
+
+	@media (max-width: $mobile) {
+		background: none;
+		animation: none;
+	}
+
+	@keyframes heroBg {
+		0% {
+			background-position: 0% 30%, 100% 30%;
+		}
+		25% {
+			background-position: -5% 30%, 100% 30%;
+		}
+		50% {
+			background-position: 0% 30%, 105% 30%;
+		}
+		100% {
+			background-position: 0% 30%, 100% 30%;
+		}
+	}
+
+	// .section-hero__title
+
+	&__title {
+		@include adaptiveValue('font-size', 68, 34);
+		@include adaptiveValue('line-height', 70, 36);
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 25px;
+
+		span {
+			display: inline-block;
+			@include adaptiveValue('font-size', 72, 38);
+			@include adaptiveValue('line-height', 74, 40);
+			margin-bottom: 10px;
+			padding: 12px 25px;
+			@include adaptiveValue('padding-top', 12, 10);
+			@include adaptiveValue('padding-bottom', 12, 10);
+			@include adaptiveValue('padding-right', 25, 20);
+			@include adaptiveValue('padding-left', 25, 20);
+			background-color: var(--color-primary);
+			border-radius: 15px;
+		}
+	}
+
+	// .section-hero__text
+
+	&__text {
+		max-width: 920px;
+		margin: 0 auto;
+		@include adaptiveValue('font-size', 24, 20);
+		@include adaptiveValue('line-height', 26, 22);
+		text-align: center;
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 7px;
+			}
+		}
+	}
+
+	&__statistics {
+		margin-top: 80px;
+		background-color: var(--color-white);
+		border-radius: 16px;
+		padding: 32px;
+		transition: all 0.3s ease-in-out;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		justify-content: center;
+		justify-items: center;
+		align-items: center;
+		column-gap: 32px;
+		row-gap: 32px;
+	}
+}
+
+.statistics {
+	&__card {
+		text-align: center;
+	}
+
+	&__title {
+		@include adaptiveValue('font-size', 32, 25);
+		@include adaptiveValue('line-height', 34, 27);
+		margin-bottom: 15px;
+
+		.small-text {
+			color: var(--color-text-grey);
+			@include adaptiveValue('font-size', 18, 16);
+			@include adaptiveValue('line-height', 20, 18);
+		}
+	}
+	&__description {
+		color: var(--color-text-grey);
+	}
+}

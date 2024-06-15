@@ -1,0 +1,61 @@
+.btn {
+	font-family: 'UbuntuMono', sans-serif;
+	@include adaptiveValue('font-size', 18, 16);
+	font-weight: 400;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+	background-color: var(--color-primary);
+	color: var(--color-dark);
+	text-decoration: none;
+	padding: 15px 30px;
+	white-space: nowrap;
+	transition: 0.3s all ease-in-out;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	border: 1px solid transparent;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 0;
+		background-color: var(--color-white);
+		transition: 0.5s all ease-in-out;
+		z-index: -1;
+	}
+	&::after {
+		left: 0;
+		background-color: var(--color-white);
+	}
+
+	@include hover {
+		border-color: var(--color-dark);
+		background-color: var(--color-white);
+		transition-delay: 0.3s;
+
+		&::before {
+			width: 50%;
+		}
+		&::after {
+			width: 50%;
+		}
+	}
+
+	&.dark {
+		background-color: var(--color-dark);
+		color: var(--color-white);
+		border: 1px solid var(--color-dark);
+
+		@include hover {
+			color: var(--color-dark);
+			background-color: var(--color-white);
+			transition-delay: 0.3s;
+		}
+	}
+}

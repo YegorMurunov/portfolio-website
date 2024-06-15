@@ -1,0 +1,19 @@
+// colors
+:root {
+	--color-white: #fff;
+	--color-light-grey: #f1f1f1;
+	--color-bg: #f7f7f7;
+	--color-dark: #000;
+	--color-primary: #ffef5c;
+	--color-primary-hover: #ffe500;
+	--color-text-grey: #393a3c;
+	--color-text-light-grey: #535455;
+}
+
+$minWidth: 320;
+$maxWidth: 1920; // Ширина полотна (макета)
+
+// container
+$maxContainerWidth: 1180px;
+$containerPadding: 10px; // с одной стороны
+$containerWidth: $maxContainerWidth + $containerPadding * 2;
