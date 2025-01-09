@@ -1,11 +1,13 @@
 @use 'sass:math';
 // mixins
-@import './media';
+@use 'media';
+@use "../modules/variables";
+
 
 // ADAPTIVE FONT
 @mixin adaptiveValue($property, $pcSize, $mobSize) {
 	$addSize: $pcSize - $mobSize;
-	$maxWidthM: $maxWidth - 320;
+	$maxWidthM: variables.$maxWidth - 320;
 	#{$property}: calc(
 		#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthM})
 	);
@@ -36,12 +38,12 @@
 		border-left: $size solid transparent;
 		border-right: $size solid transparent;
 		border-top: $size solid $color;
-		margin-top: 0 - round(calc($size / 2.5));
+		margin-top: 0 - math.round(calc($size / 2.5));
 	} @else if $direction == up {
 		border-left: $size solid transparent;
 		border-right: $size solid transparent;
 		border-bottom: $size solid $color;
-		margin-bottom: 0 - round(calc($size / 2.5));
+		margin-bottom: 0 - math.round(calc($size / 2.5));
 	} @else if $direction == right {
 		border-top: $size solid transparent;
 		border-bottom: $size solid transparent;

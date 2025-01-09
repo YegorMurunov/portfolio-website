@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html', {
+		title: "Portfolio Murunov Yegor",
+		description: "Website portfolio of Yegor Murunov. Website layout of any complexity, high-quality Front-End on time and at a reasonable price!",
+	})
+	<body>
+		<div id="wrapper">
+			@@include('html/en/header.html', {})
+
+			<main class="page">
+				@@include('html/en/section-hero.html', {})
+				@@include('html/en/section-about.html', {})
+				@@include('html/en/section-portfolio.html', {})
+			</main>
+
+			@@include('html/en/footer.html', {})
+		</div>
+
+		@@include('html/scripts.html')
+	</body>
+</html>

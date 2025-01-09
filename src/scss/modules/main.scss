@@ -1,7 +1,10 @@
+@use "../mixins/mixins";
+@use "variables";
+
 body {
 	font-family: 'UbuntuMono', sans-serif;
-	@include adaptiveValue('font-size', 18, 16);
-	@include adaptiveValue('line-height', 20, 18);
+	@include mixins.adaptiveValue('font-size', 18, 16);
+	@include mixins.adaptiveValue('line-height', 20, 18);
 	font-weight: 400;
 	color: var(--color-dark);
 	background-color: var(--color-bg);
@@ -11,14 +14,30 @@ body {
 	&.lock {
 		overflow: hidden;
 	}
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		background-color: #dfdfdf;
+		border-radius: 25px;
+		padding: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--color-primary);
+		border-radius: 25px;
+		transition: background-color 0.3s ease-in-out;
+
+		&:hover {
+			background-color: var(--color-primary-hover);
+		}
+	}
 }
 
 [class*='__container'],
 .container {
 	// теперь не нужно использовать класс container
-	max-width: $containerWidth;
+	max-width: variables.$containerWidth;
 	margin: 0 auto;
-	padding: 0 $containerPadding;
+	padding: 0 variables.$containerPadding;
 }
 
 #wrapper {
@@ -46,14 +65,14 @@ main.page {
 		align-items: flex-start;
 		justify-content: center;
 		flex-direction: column;
-		@include adaptiveValue('margin-bottom', 64, 48);
+		@include mixins.adaptiveValue('margin-bottom', 64, 48);
 	}
 
 	&__title {
 		position: relative;
 		display: inline-block;
 		font-weight: 700;
-		@include adaptiveValue('font-size', 52, 32);
+		@include mixins.adaptiveValue('font-size', 52, 32);
 		padding: 10px;
 		z-index: 1;
 
@@ -78,30 +97,30 @@ main.page {
 	}
 	&__subtitle {
 		display: inline-block;
-		@include adaptiveValue('font-size', 18, 16);
+		@include mixins.adaptiveValue('font-size', 18, 16);
 		color: var(--color-dark);
-		@include adaptiveValue('margin-top', 32, 20);
+		@include mixins.adaptiveValue('margin-top', 32, 20);
 		font-weight: 400;
 	}
 }
 
 h1 {
 	font-weight: 700;
-	@include adaptiveValue('font-size', 68, 34);
-	@include adaptiveValue('line-height', 70, 36);
+	@include mixins.adaptiveValue('font-size', 68, 34);
+	@include mixins.adaptiveValue('line-height', 70, 36);
 }
 h2 {
 	font-weight: 700;
-	@include adaptiveValue('font-size', 52, 32);
-	@include adaptiveValue('line-height', 54, 34);
+	@include mixins.adaptiveValue('font-size', 52, 32);
+	@include mixins.adaptiveValue('line-height', 54, 34);
 }
 h3 {
 	// font-weight: 700;
-	@include adaptiveValue('font-size', 22, 18);
-	@include adaptiveValue('line-height', 24, 20);
+	@include mixins.adaptiveValue('font-size', 22, 18);
+	@include mixins.adaptiveValue('line-height', 24, 20);
 }
 h4 {
 	// font-weight: 700;
-	@include adaptiveValue('font-size', 18, 16);
-	@include adaptiveValue('line-height', 20, 18);
+	@include mixins.adaptiveValue('font-size', 18, 16);
+	@include mixins.adaptiveValue('line-height', 20, 18);
 }

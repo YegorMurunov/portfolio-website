@@ -1,3 +1,6 @@
+@use "../mixins/media";
+@use "../mixins/mixins";
+
 .footer {
 	margin-top: 100px;
 	padding-bottom: 30px;
@@ -19,7 +22,7 @@
 		border-radius: 20px;
 		background-color: var(--color-white);
 
-		@include _mobile {
+		@include media.mobile {
 			padding: 20px;
 		}
 	}
@@ -32,8 +35,8 @@
 	// .footer__title
 
 	&__title {
-		@include adaptiveValue('font-size', 20, 18);
-		@include adaptiveValue('line-height', 22, 20);
+		@include mixins.adaptiveValue('font-size', 20, 18);
+		@include mixins.adaptiveValue('line-height', 22, 20);
 		color: var(--color-text-light-grey);
 		margin-bottom: 15px;
 	}

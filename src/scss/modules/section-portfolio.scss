@@ -1,3 +1,6 @@
+@use "../mixins/media";
+@use "../mixins/mixins";
+
 .section-portfolio {
 	// .section-portfolio__title
 
@@ -31,7 +34,7 @@
 		border-radius: 20px;
 		background-color: var(--color-white);
 
-		@include _mobile {
+		@include media.mobile {
 			padding: 20px;
 		}
 	}
@@ -63,7 +66,7 @@
 	// .portfolio-item__title
 
 	&__title {
-		@include adaptiveValue('font-size', 32, 20);
+		@include mixins.adaptiveValue('font-size', 32, 20);
 		margin-bottom: 10px;
 		color: var(--color-dark);
 	}
@@ -71,7 +74,7 @@
 	// .portfolio-item__subtitle
 
 	&__subtitle {
-		@include adaptiveValue('font-size', 18, 16);
+		@include mixins.adaptiveValue('font-size', 18, 16);
 		color: var(--color-text-grey);
 	}
 
@@ -87,7 +90,7 @@
 		transition: background-color 0.3s ease-in-out;
 		border: 1px solid var(--color-light-grey);
 
-		@include hover {
+		@include mixins.hover {
 			background-color: rgba(241, 241, 241, 0.5);
 
 			svg {
@@ -107,7 +110,7 @@
 		display: flex;
 		gap: 40px;
 
-		@include _mobile {
+		@include media.mobile {
 			flex-direction: column;
 		}
 	}
@@ -116,7 +119,7 @@
 		.portfolio-item__content {
 			flex-direction: row-reverse;
 
-			@include _mobile {
+			@include media.mobile {
 				flex-direction: column;
 			}
 		}
@@ -157,10 +160,10 @@
 
 .item-right {
 	&__title {
-		@include adaptiveValue('font-size', 22, 20);
+		@include mixins.adaptiveValue('font-size', 22, 20);
 		font-weight: 700;
 		color: var(--color-dark);
-		@include adaptiveValue('line-height', 24, 22);
+		@include mixins.adaptiveValue('line-height', 24, 22);
 	}
 
 	&__text {
@@ -205,14 +208,14 @@
 		align-items: center;
 		border: 1px solid var(--color-light-grey);
 		border-radius: 10px;
-		@include adaptiveValue('font-size', 18, 16);
+		@include mixins.adaptiveValue('font-size', 18, 16);
 		text-decoration: none;
 		color: var(--color-text-grey);
 		padding: 5px 10px;
 		transition: all 0.3s ease-in-out;
 		white-space: nowrap;
 
-		@include hover {
+		@include mixins.hover {
 			transform: translate(0, -5px);
 			color: var(--color-dark);
 		}

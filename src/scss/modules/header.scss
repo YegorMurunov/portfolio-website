@@ -1,3 +1,6 @@
+@use "../mixins/media";
+@use "../mixins/mixins";
+
 html.menu-open {
 	.header__menu-body {
 		transform: translate(0, 0);
@@ -59,7 +62,7 @@ html.menu-open {
 		border-radius: 100px;
 		box-shadow: 0 3px 0px 1px var(--color-light-grey);
 		gap: 40px;
-		@include adaptiveValue('gap', 40, 30);
+		@include mixins.adaptiveValue('gap', 40, 30);
 		border: 1px solid var(--color-light-grey);
 	}
 
@@ -95,7 +98,7 @@ html.menu-open {
 		display: none;
 		z-index: 101;
 
-		@include _tablet {
+		@include media.tablet {
 			display: block;
 		}
 
@@ -133,7 +136,7 @@ html.menu-open {
 		justify-self: flex-start;
 		margin-right: auto;
 
-		@include _tablet {
+		@include media.tablet {
 			flex-direction: column;
 		}
 
@@ -148,7 +151,7 @@ html.menu-open {
 			row-gap: 10px;
 			position: relative;
 
-			@include _tablet {
+			@include media.tablet {
 				gap: 20px;
 				justify-content: center;
 				flex-direction: column;
@@ -166,7 +169,7 @@ html.menu-open {
 					border-radius: 2px;
 					background-color: var(--color-light-grey);
 
-					@include _tablet {
+					@include media.tablet {
 						left: 50%;
 						top: calc(100% + 30px);
 						transform: translate(-50%, 0);
@@ -231,7 +234,7 @@ html.menu-open {
 					border-radius: 3px;
 				}
 
-				@include hover {
+				@include mixins.hover {
 					&::before {
 						width: 100%;
 						left: 0;
@@ -293,7 +296,7 @@ html.menu-open {
 						color: var(--color-dark);
 						text-decoration: none;
 
-						@include hover {
+						@include mixins.hover {
 							text-decoration: underline;
 						}
 					}
@@ -307,7 +310,7 @@ html.menu-open {
 			padding: 3px;
 			text-decoration: none;
 			color: var(--color-dark);
-			@include adaptiveValue('fonts-size', 18, 16);
+			@include mixins.adaptiveValue('fonts-size', 18, 16);
 
 			&::before {
 				content: '';
@@ -322,7 +325,7 @@ html.menu-open {
 				border-radius: 3px;
 			}
 
-			@include hover {
+			@include mixins.hover {
 				&::before {
 					width: 100%;
 					left: 0;

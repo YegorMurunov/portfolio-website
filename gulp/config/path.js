@@ -15,7 +15,7 @@ export const path = {
 		fonts: `${buildFolder}/fonts/`
 	},
 	src: {
-		html: `${srcFolder}/*.html`,
+		html: [`!${srcFolder}/html/**/*.html`, `${srcFolder}/**/*.html`],
 		scss: `${srcFolder}/scss/style.scss`,
 		js: `${srcFolder}/js/script.js`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,webp}`,

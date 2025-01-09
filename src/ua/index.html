@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('../html/head.html', {
+		title: "Портфоліо Мурунов Єгор",
+		description: "Сайт портфоліо Єгор Мурунов. Верстка сайтів будь-якої складності, якісний Front-End у строки та за приємною ціною!",
+		path: "../"
+	})
+	<body>
+		<div id="wrapper">
+			@@include('../html/ua/header.html', {})
+
+			<main class="page">
+				@@include('../html/ua/section-hero.html', {})
+				@@include('../html/ua/section-about.html', {})
+				@@include('../html/ua/section-portfolio.html', {})
+			</main>
+
+			@@include('../html/ua/footer.html', {})
+			<!-- @@include('../html/popups.html', {}) -->
+		</div>
+
+		@@include('../html/scripts.html', {path: "../"})
+	</body>
+</html>

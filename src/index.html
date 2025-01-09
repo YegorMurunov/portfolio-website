@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/head.html', {title: "Портфолио Мурунов Егор"})
+	@@include('html/head.html', {
+	title: "Портфолио Мурунов Егор",
+	description: "Сайт портфолио Егор Мурунов. Верстка сайтов любой сложности, качественный Front-End в сроки и по приятной цене!",
+	path: "./"
+})
 	<body>
 		<div id="wrapper">
 			@@include('html/header.html', {})
@@ -15,6 +19,6 @@
 			<!-- @@include('html/popups.html', {}) -->
 		</div>
 
-		@@include('html/scripts.html')
+		@@include('html/scripts.html', {path: "./"})
 	</body>
 </html>

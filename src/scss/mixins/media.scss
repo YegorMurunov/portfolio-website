@@ -9,12 +9,12 @@ $mobile: 768px;
 		@content;
 	}
 }
-@mixin _tablet {
+@mixin tablet {
 	@media (max-width: $tablet) {
 		@content;
 	}
 }
-@mixin _mobile {
+@mixin mobile {
 	@media (max-width: $mobile) {
 		@content;
 	}

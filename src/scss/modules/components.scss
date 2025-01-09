@@ -1,6 +1,8 @@
+@use "../mixins/mixins";
+
 .btn {
 	font-family: 'UbuntuMono', sans-serif;
-	@include adaptiveValue('font-size', 18, 16);
+	@include mixins.adaptiveValue('font-size', 18, 16);
 	font-weight: 400;
 	display: inline-flex;
 	justify-content: center;
@@ -34,7 +36,7 @@
 		background-color: var(--color-white);
 	}
 
-	@include hover {
+	@include mixins.hover {
 		border-color: var(--color-dark);
 		background-color: var(--color-white);
 		transition-delay: 0.3s;
@@ -52,7 +54,7 @@
 		color: var(--color-white);
 		border: 1px solid var(--color-dark);
 
-		@include hover {
+		@include mixins.hover {
 			color: var(--color-dark);
 			background-color: var(--color-white);
 			transition-delay: 0.3s;
