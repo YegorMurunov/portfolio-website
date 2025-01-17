@@ -23,7 +23,10 @@ if (popupLinks.length > 0) {
 				popupClose(document.querySelector('.popup.open'));
 			}
 
-			const popupName = e.target.getAttribute('href').substring(1);
+			const popupName = e.target
+				.closest('.popup-link')
+				.getAttribute('href')
+				.substring(1);
 			const currentPopup = document.getElementById(popupName);
 
 			popupOpen(currentPopup);
@@ -35,7 +38,7 @@ function popupOpen(currentPopup) {
 	if (dom.html.classList.contains('menu-open')) {
 		dom.html.classList.remove('menu-open');
 	}
-	if (currentPopup && unlock) {
+	if (currentPopup && bodyLockStatus) {
 		const popupActive = document.querySelector('.popup.open');
 		if (popupActive) {
 			popupClose(currentPopup, false);

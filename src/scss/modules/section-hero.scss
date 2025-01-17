@@ -4,7 +4,6 @@
 .section-hero {
 	// min-height: 100vh;
 	// min-height: calc(var(--vh) * 100);
-	padding: 200px 0 40px 0;
 	padding-top: 200px;
 	@include mixins.adaptiveValue('padding-top', 200, 150);
 	background-image: url('@img/hero/hero-left_2.svg'),

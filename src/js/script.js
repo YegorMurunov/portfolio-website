@@ -10,6 +10,7 @@ import './modules/popups.js';
 import './modules/anchor-scroll.js';
 import './modules/dynamic-adapt.js';
 import './modules/spoilers.js';
+import './modules/lazy-load-popup.js';
 
 document.addEventListener('DOMContentLoaded', e => {
 	isWebp();

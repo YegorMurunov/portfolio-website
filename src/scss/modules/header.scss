@@ -1,5 +1,5 @@
-@use "../mixins/media";
-@use "../mixins/mixins";
+@use '../mixins/media';
+@use '../mixins/mixins';
 
 html.menu-open {
 	.header__menu-body {
@@ -32,7 +32,7 @@ html.menu-open {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	// padding-top: 20px;
-	z-index: 99;
+	z-index: 3;
 	transition: padding-top 0.3s ease-in-out;
 
 	&.fixed {
