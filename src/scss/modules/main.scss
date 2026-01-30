@@ -1,5 +1,5 @@
-@use "../mixins/mixins";
-@use "variables";
+@use '../mixins/mixins';
+@use 'variables';
 
 body {
 	font-family: 'UbuntuMono', sans-serif;
@@ -10,6 +10,8 @@ body {
 	background-color: var(--color-bg);
 	position: relative;
 	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	&.lock {
 		overflow: hidden;
@@ -98,6 +100,7 @@ main.page {
 	&__subtitle {
 		display: inline-block;
 		@include mixins.adaptiveValue('font-size', 18, 16);
+		@include mixins.adaptiveValue('line-height', 20, 18);
 		color: var(--color-dark);
 		@include mixins.adaptiveValue('margin-top', 32, 20);
 		font-weight: 400;
